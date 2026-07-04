@@ -1,0 +1,78 @@
+/* ================================================
+   darkmode.css — Anand (Team Lead)
+   Dark Mode — Pure CSS Checkbox Hack
+   Facebook Clone Project — NIET Greater Noida
+================================================== */
+
+/* ── Dark Mode Toggle Button ──────────────────── */
+.navbar__darkmode-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--hover-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  margin-right: 4px;
+  user-select: none;
+}
+
+.navbar__darkmode-btn:hover {
+  background-color: var(--border);
+}
+
+/* ── Dark Mode Variables ──────────────────────── */
+#darkmode-toggle:checked ~ * {
+  --bg-gray:      #18191A;
+  --white:        #242526;
+  --text-dark:    #E4E6EB;
+  --text-gray:    #B0B3B8;
+  --text-light:   #8A8D91;
+  --border:       #3E4042;
+  --hover-gray:   #3A3B3C;
+  --navbar-bg:    #242526;
+  --card-shadow:  0 1px 2px rgba(0, 0, 0, 0.5);
+  --fb-blue-light:#263951;
+}
+
+/* ── Dark Mode Body ───────────────────────────── */
+#darkmode-toggle:checked ~ * body,
+#darkmode-toggle:checked ~ .wrapper,
+#darkmode-toggle:checked ~ header {
+  background-color: var(--bg-gray);
+  color: var(--text-dark);
+}
+
+/* ── Dark Mode Navbar ─────────────────────────── */
+#darkmode-toggle:checked ~ header .navbar {
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── Dark Mode Cards ──────────────────────────── */
+#darkmode-toggle:checked ~ .wrapper .card,
+#darkmode-toggle:checked ~ .wrapper .post-card,
+#darkmode-toggle:checked ~ .wrapper .create-post__card,
+#darkmode-toggle:checked ~ .wrapper .story-card {
+  background-color: var(--white);
+  border-color: var(--border);
+}
+
+/* ── Dark Mode Input ──────────────────────────── */
+#darkmode-toggle:checked ~ .wrapper input {
+  background-color: var(--hover-gray);
+  color: var(--text-dark);
+}
+
+/* ── Dark Mode Sidebar ────────────────────────── */
+#darkmode-toggle:checked ~ .wrapper .left-sidebar,
+#darkmode-toggle:checked ~ .wrapper .right-sidebar {
+  background-color: var(--bg-gray);
+}
+
+/* ── Dark Mode Toggle Icon Change ────────────── */
+#darkmode-toggle:checked ~ header .navbar__darkmode-btn::after {
+  content: '☀️';
+}

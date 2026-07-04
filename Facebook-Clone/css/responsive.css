@@ -1,0 +1,125 @@
+/* ================================================
+   responsive.css — Anand (Team Lead)
+   Media Queries — Mobile / Tablet / Desktop
+================================================== */
+
+/* ── Breakpoints ──────────────────────────────── */
+/*
+  Mobile:   < 576px
+  Tablet:   576px – 991px
+  Desktop:  992px – 1199px
+  Wide:     >= 1200px
+*/
+
+/* ── Wide Screen (>= 1200px) ─────────────────── */
+@media (min-width: 1200px) {
+  .wrapper {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .left-sidebar,
+  .right-sidebar {
+    width: 280px;
+  }
+}
+
+/* ── Desktop (992px – 1199px) ────────────────── */
+@media (max-width: 1199px) {
+  .right-sidebar {
+    display: none;
+  }
+
+  .left-sidebar {
+    width: 72px;
+  }
+
+  /* Show only icons in left sidebar */
+  .sidebar__menu-label,
+  .sidebar__section-title,
+  .sidebar__profile-name {
+    display: none;
+  }
+
+  .sidebar__menu-link {
+    justify-content: center;
+  }
+
+  .feed {
+    max-width: 100%;
+  }
+}
+
+/* ── Tablet (576px – 991px) ──────────────────── */
+@media (max-width: 991px) {
+  .left-sidebar {
+    display: none;
+  }
+
+  .right-sidebar {
+    display: none;
+  }
+
+  .feed {
+    max-width: 100%;
+    padding: 16px 8px;
+  }
+
+  /* Navbar center links hidden */
+  .navbar__center {
+    display: none;
+  }
+
+  .navbar__search-input {
+    width: 160px;
+  }
+}
+
+/* ── Mobile (< 576px) ────────────────────────── */
+@media (max-width: 575px) {
+  .navbar {
+    padding: 0 8px;
+  }
+
+  .navbar__search {
+    display: none;
+  }
+
+  .navbar__center {
+    display: none;
+  }
+
+  .wrapper {
+    padding-top: var(--navbar-height);
+  }
+
+  .feed {
+    padding: 8px 0;
+  }
+
+  .stories__container {
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .post-card {
+    border-radius: 0;
+  }
+
+  .create-post__card {
+    border-radius: 0;
+  }
+}
+
+/* ── Print ────────────────────────────────────── */
+@media print {
+  .navbar,
+  .left-sidebar,
+  .right-sidebar {
+    display: none;
+  }
+
+  .feed {
+    max-width: 100%;
+  }
+}

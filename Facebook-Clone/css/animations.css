@@ -1,0 +1,86 @@
+/* ================================================
+   animations.css — Anand (Team Lead)
+   Hover Effects + Transitions + Keyframes
+  
+================================================== */
+
+/* ── Global Transition ────────────────────────── */
+* {
+  transition: background-color 0.2s ease,
+              color 0.2s ease,
+              box-shadow 0.2s ease,
+              transform 0.2s ease;
+}
+
+/* ── Navbar Icon Hover ────────────────────────── */
+.navbar__nav-link:hover,
+.navbar__action-btn:hover {
+  background-color: var(--hover-gray);
+  border-radius: 50%;
+}
+
+/* ── Story Card Hover ─────────────────────────── */
+.story-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ── Post Card Hover ──────────────────────────── */
+.post-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ── Like Button Pulse Animation ─────────────── */
+@keyframes like-pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+.post-card__like-btn:hover {
+  color: var(--fb-blue);
+  animation: like-pulse 0.3s ease;
+}
+
+/* ── Sidebar Link Hover ───────────────────────── */
+.sidebar__menu-link:hover,
+.sidebar__shortcut-link:hover {
+  background-color: var(--hover-gray);
+  border-radius: var(--border-radius);
+}
+
+/* ── Contact Item Hover ───────────────────────── */
+.rightbar__contact-item:hover {
+  background-color: var(--hover-gray);
+  border-radius: var(--border-radius);
+}
+
+/* ── Button Hover ─────────────────────────────── */
+.btn:hover {
+  filter: brightness(0.95);
+}
+
+/* ── Create Post Input Focus ──────────────────── */
+.create-post__input:hover {
+  background-color: var(--border);
+}
+
+/* ── Page Fade In ─────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.post-card {
+  animation: fadeIn 0.3s ease;
+}
+
+/* ── Notification Badge Bounce ────────────────── */
+@keyframes badge-bounce {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.2); }
+}
+
+.navbar__badge {
+  animation: badge-bounce 1s ease infinite;
+}

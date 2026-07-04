@@ -1,0 +1,185 @@
+/* ================================================
+   reset.css — Anand (Team Lead)
+   CSS Reset + Global Variables + Utility Classes
+================================================== */
+
+/* ── CSS Reset ────────────────────────────────── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  background-color: var(--bg-gray);
+  color: var(--text-dark);
+  min-height: 100vh;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: var(--font);
+}
+
+input,
+textarea {
+  font-family: var(--font);
+  border: none;
+  outline: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+/* ── CSS Variables ────────────────────────────── */
+:root {
+  /* Brand Colors */
+  --fb-blue:          #1877F2;
+  --fb-blue-dark:     #166FE5;
+  --fb-blue-light:    #E7F3FF;
+  --fb-green:         #42B72A;
+  --fb-green-dark:    #36A420;
+
+  /* Backgrounds */
+  --bg-gray:          #F0F2F5;
+  --white:            #FFFFFF;
+
+  /* Text */
+  --text-dark:        #050505;
+  --text-gray:        #65676B;
+  --text-light:       #8A8D91;
+
+  /* UI */
+  --border:           #CED0D4;
+  --hover-gray:       #F2F2F2;
+  --card-shadow:      0 1px 2px rgba(0, 0, 0, 0.2);
+  --border-radius:    8px;
+  --border-radius-lg: 12px;
+
+  /* Navbar */
+  --navbar-height:    56px;
+  --navbar-bg:        #FFFFFF;
+
+  /* Sidebar */
+  --sidebar-width:    280px;
+
+  /* Typography */
+  --font:             'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-size-xs:     11px;
+  --font-size-sm:     13px;
+  --font-size-md:     15px;
+  --font-size-lg:     17px;
+  --font-size-xl:     20px;
+}
+
+/* ── Utility Classes ──────────────────────────── */
+
+/* Screen reader only — accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Flex helpers */
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Card base */
+.card {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  margin-bottom: 12px;
+}
+
+/* Avatar circle */
+.avatar {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Divider */
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 8px 0;
+}
+
+/* ── Page Layout ──────────────────────────────── */
+.wrapper {
+  display: flex;
+  gap: 0;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: var(--navbar-height);
+  min-height: 100vh;
+}
+
+.feed {
+  flex: 1;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 24px 8px;
+}
+
+.left-sidebar,
+.right-sidebar {
+  width: var(--sidebar-width);
+  flex-shrink: 0;
+  padding: 8px;
+  position: sticky;
+  top: var(--navbar-height);
+  height: calc(100vh - var(--navbar-height));
+  overflow-y: auto;
+}
+
+/* Hide scrollbar on sidebars */
+.left-sidebar::-webkit-scrollbar,
+.right-sidebar::-webkit-scrollbar {
+  display: none;
+}
